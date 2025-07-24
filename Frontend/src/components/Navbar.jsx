@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
@@ -9,7 +10,7 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav className="bg-[#0f172a] text-[#f1f5f9] px-6 py-4 shadow-lg fixed top-0 left-0 w-full ">
+    <nav className="bg-[#0f172a] text-[#f1f5f9] px-6 py-4 shadow-lg fixed top-0 left-0 w-full z-50">
       <div className="flex justify-between items-center">
         {/* Left: Logo */}
         <div className="text-2xl font-bold tracking-wide text-[#38bdf8]">

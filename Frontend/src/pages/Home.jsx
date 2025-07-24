@@ -1,5 +1,4 @@
 // src/components/Home.jsx
-
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -20,7 +19,7 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-12">
+    <div className="w-full bg-gray-900 text-white flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-12">
       {/* Left Section */}
       <div className="md:w-1/2 w-full mb-10 md:mb-0">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-pulse">
