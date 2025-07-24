@@ -6,18 +6,27 @@ const Learn = () => {
   const [customSubject, setCustomSubject] = useState("");
   const [response, setResponse] = useState("");
 
-  const handleLearn = () => {
-    const selectedSubject = subject === "other" ? customSubject : subject;
-    if (!selectedSubject || !level) {
-      alert("Please select a subject and level.");
-      return;
-    }
+ const handleLearn = async () => {
+  const selectedSubject = subject === "other" ? customSubject : subject;
+  if (!selectedSubject || !level) {
+    alert("Please select a subject and level.");
+    return;
+  }
 
-    // TODO: Connect to backend or AI API
-    setResponse(
-      `📘 Here's a beginner-friendly introduction to ${selectedSubject} at the ${level} level.`
-    );
-  };
+  try {
+    const res = await fetch("http://localhost:5000/api/learn", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ subject: selectedSubject, level }),
+    });
+
+    const data = await res.json();
+    setResponse(data.content);
+  } catch (error) {
+    console.error("Error fetching learning material:", error);
+    setResponse("⚠️ Failed to fetch learning material.");
+  }
+};
 
   const handleNewTopic = () => {
     setSubject("");
@@ -90,7 +99,7 @@ const Learn = () => {
 
       {/* AI Response Area */}
       {response && (
-        <div className="bg-[#1e293b] p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
+        <div className="bg-[#1e293b] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-4 text-[#38bdf8]">Learning Material:</h2>
           <p className="text-[#f8fafc] mb-6">{response}</p>
 
