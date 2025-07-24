@@ -5,17 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "div" : "nodemon server.js"
+    "div": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "axios": "^1.11.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "mongoose": "^8.16.4",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "react-markdown": "^10.1.0"
   }
 }
