@@ -1,0 +1,12 @@
+[
+  {
+    "question": "What is the output of 2 + '2' in JavaScript?",
+    "options": ["22", "4", "NaN", "Error"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which keyword is used to define a constant in JavaScript?",
+    "options": ["var", "let", "const", "define"],
+    "correctIndex": 2
+  }
+]

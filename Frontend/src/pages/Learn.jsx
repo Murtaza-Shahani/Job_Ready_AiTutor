@@ -3,12 +3,17 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useNavigate } from "react-router-dom";
 
 const Learn = () => {
+  // Inside Learn component
+  const navigate = useNavigate();
   const [subject, setSubject] = useState("");
   const [level, setLevel] = useState("");
   const [customSubject, setCustomSubject] = useState("");
   const [response, setResponse] = useState("");
+  const [displayedContent, setDisplayedContent] = useState(""); // for streaming
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLearn = async () => {
     const selectedSubject = subject === "other" ? customSubject : subject;
@@ -16,6 +21,10 @@ const Learn = () => {
       alert("Please select a subject and level.");
       return;
     }
+
+    setResponse("");
+    setDisplayedContent("");
+    setIsLoading(true);
 
     try {
       const res = await fetch("http://localhost:5000/api/learn", {
@@ -26,10 +35,29 @@ const Learn = () => {
 
       const data = await res.json();
       setResponse(data.content);
+      simulateStreaming(data.content);
     } catch (error) {
       console.error("Error fetching learning material:", error);
       setResponse("⚠️ Failed to fetch learning material.");
+      setDisplayedContent("⚠️ Failed to fetch learning material.");
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  // Simulate content streaming
+  const simulateStreaming = (text) => {
+    const lines = text.split("\n\n"); // Split by paragraph
+    let index = 0;
+
+    const interval = setInterval(() => {
+      if (index < lines.length) {
+        setDisplayedContent((prev) => prev + lines[index] + "\n\n");
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 200); // 200ms delay between chunks
   };
 
   const handleNewTopic = () => {
@@ -37,6 +65,7 @@ const Learn = () => {
     setCustomSubject("");
     setLevel("");
     setResponse("");
+    setDisplayedContent("");
   };
 
   return (
@@ -97,10 +126,19 @@ const Learn = () => {
         </button>
       </div>
 
-      {/* AI Response Area */}
-      {response && (
+      {/* Loading Indicator */}
+      {isLoading && (
+        <div className="text-center text-[#94a3b8] mb-6 animate-pulse">
+          🧠 Thinking deeply... generating material...
+        </div>
+      )}
+
+      {/* AI Response */}
+      {displayedContent && (
         <div className="bg-[#1e293b] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-6 text-[#38bdf8]">Learning Material:</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-[#38bdf8]">
+            Learning Material:
+          </h2>
 
           <div className="prose prose-invert max-w-none">
             <ReactMarkdown
@@ -125,7 +163,7 @@ const Learn = () => {
                 },
               }}
             >
-              {response}
+              {displayedContent}
             </ReactMarkdown>
           </div>
 
@@ -137,9 +175,7 @@ const Learn = () => {
               🔄 New Topic
             </button>
             <button
-              onClick={() =>
-                alert(`Quiz: You selected ${subject} - ${level}`)
-              }
+              onClick={() => navigate("/quiz", { state: { subject, level } })}
               className="px-4 py-2 bg-[#9333ea] text-white rounded-md hover:bg-[#7e22ce] transition"
             >
               🧠 Give Quiz
