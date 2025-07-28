@@ -13,7 +13,7 @@ export async function generateQuiz(req, res) {
   const { subject, level } = req.body;
 
   if (!subject || !level) {
-    return res.status(400).json({ error: "Subject and level are required." });
+    return res.status(400).json({ error: "❌ Subject and level are required." });
   }
 
   const prompt = generateQuizPrompt(subject, level);
@@ -24,31 +24,47 @@ export async function generateQuiz(req, res) {
       {
         contents: [
           {
-            parts: [{ text: prompt }]
-          }
-        ]
+            parts: [{ text: prompt }],
+          },
+        ],
       },
       {
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         params: {
-          key: GEMINI_API_KEY
-        }
+          key: GEMINI_API_KEY,
+        },
       }
     );
 
-    const rawText = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    let rawText = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
     console.log("Gemini Response Text:\n", rawText);
+
+    // ✅ Clean markdown or extra formatting if present
+    if (!rawText) {
+      return res.status(500).json({ error: "❌ Gemini returned an empty response." });
+    }
+
+    rawText = rawText.trim();
+
+    // Remove any markdown block (```json or ```)
+    if (rawText.startsWith("```")) {
+      rawText = rawText.replace(/```json|```/g, "").trim();
+    }
 
     let quizData;
     try {
       quizData = JSON.parse(rawText);
     } catch (error) {
-      return res.status(500).json({ error: "❌ Failed to parse Gemini response. Invalid JSON format." });
+      console.error("❌ JSON Parse Error:", error.message);
+      return res.status(500).json({
+        error: "❌ Failed to parse Gemini response. Invalid JSON format.",
+        raw: rawText, // Optional: send raw data for debugging
+      });
     }
 
-    // ✅ Ensure data folder exists before writing the file
+    // ✅ Ensure data directory exists
     const dataDir = path.join(process.cwd(), "data");
     if (!fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir);

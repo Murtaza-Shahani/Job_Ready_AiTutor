@@ -1,0 +1,132 @@
+[
+  {
+    "question": "Which keyword is used to declare a variable in JavaScript?",
+    "options": [
+      "int",
+      "string",
+      "var",
+      "variable"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is the result of '5' + 5 in JavaScript?",
+    "options": [
+      "10",
+      "55",
+      "Error",
+      "NaN"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which of the following is NOT a primitive data type in JavaScript?",
+    "options": [
+      "string",
+      "number",
+      "boolean",
+      "object"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "question": "How do you write a single-line comment in JavaScript?",
+    "options": [
+      "// This is a comment",
+      "/* This is a comment */",
+      "# This is a comment",
+      "-- This is a comment"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "What does DOM stand for?",
+    "options": [
+      "Document Object Model",
+      "Data Object Model",
+      "Digital Object Management",
+      "Direct Object Manipulation"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "Which operator is used for strict equality in JavaScript?",
+    "options": [
+      "==",
+      "=",
+      "===",
+      "!="
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "How do you call a function named 'myFunction' in JavaScript?",
+    "options": [
+      "call myFunction()",
+      "myFunction",
+      "myFunction()",
+      "call(myFunction)"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is the purpose of the 'typeof' operator?",
+    "options": [
+      "To determine the type of a variable",
+      "To assign a type to a variable",
+      "To convert a variable to a different type",
+      "To delete a variable"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "Which built-in function is used to display data in the console?",
+    "options": [
+      "alert()",
+      "prompt()",
+      "console.log()",
+      "display()"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is the value of 'true == 1' in JavaScript?",
+    "options": [
+      "true",
+      "false",
+      "undefined",
+      "Error"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "Which method is used to add an element to the end of an array?",
+    "options": [
+      "push()",
+      "pop()",
+      "shift()",
+      "unshift()"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "What is the result of 2 + 2 * 2 in JavaScript?",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "12"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which of the following is a valid way to write an 'if' statement in JavaScript?",
+    "options": [
+      "if x > 5 then {}",
+      "if (x > 5) {}",
+      "if x > 5 {}",
+      "if: x > 5 {}"
+    ],
+    "answerIndex": 1
+  }
+]
