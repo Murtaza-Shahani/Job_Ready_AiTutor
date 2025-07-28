@@ -13,35 +13,38 @@ const Quiz = () => {
 
   const { subject, level } = location.state || {};
 
+  // ✅ Reusable fetchQuiz function
+  const fetchQuiz = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("http://localhost:5000/api/quiz/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ subject, level }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to load quiz");
+
+      setQuizData(data.data);
+      setSelectedOptions(Array(data.data.length).fill(null));
+      setTimeLeft(data.data.length * 60); // 1 minute per question
+      setSubmitted(false);
+      console.log("✅ New quiz loaded");
+    } catch (err) {
+      setError(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     if (!subject || !level) {
       setError("Missing subject or level.");
       setLoading(false);
       return;
     }
-
-    const fetchQuiz = async () => {
-      try {
-        const res = await fetch("http://localhost:5000/api/quiz/generate", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ subject, level }),
-        });
-
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error || "Failed to load quiz");
-
-        setQuizData(data.data);
-        setSelectedOptions(Array(data.data.length).fill(null));
-        setTimeLeft(data.data.length * 60); // 1 min per question
-      } catch (err) {
-        setError(err.message || "Something went wrong");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchQuiz();
+    fetchQuiz(); // 👈 trigger on load
   }, [subject, level]);
 
   // Timer
@@ -52,7 +55,7 @@ const Quiz = () => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          handleSubmit(); // Auto submit
+          handleSubmit();
           return 0;
         }
         return prev - 1;
@@ -72,8 +75,10 @@ const Quiz = () => {
     setSubmitted(true);
   };
 
+  // ✅ Updated: regenerate quiz
   const handleTryAgain = () => {
-    navigate("/quiz", { state: { subject, level } }); // Reloads quiz
+    console.log("🔄 Triggered Try Again - Regenerating Quiz...");
+    fetchQuiz();
   };
 
   const formatTime = (seconds) => {
@@ -94,7 +99,8 @@ const Quiz = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center text-xl">
-        ⏳ Generating quiz for <span className="text-sky-400 mx-1">{subject}</span>...
+        ⏳ Generating quiz for{" "}
+        <span className="text-sky-400 mx-1">{subject}</span>...
       </div>
     );
   }
@@ -110,10 +116,13 @@ const Quiz = () => {
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-white py-10 px-4 md:px-16">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-3xl md:text-4xl font-bold text-purple-400 animate-pulse">🧠 Quiz Time</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-purple-400 animate-pulse">
+          🧠 Quiz Time
+        </h1>
         {!submitted && (
           <div className="text-lg font-semibold text-yellow-400">
-            ⏳ Time Left: <span className="font-mono">{formatTime(timeLeft)}</span>
+            ⏳ Time Left:{" "}
+            <span className="font-mono">{formatTime(timeLeft)}</span>
           </div>
         )}
       </div>
@@ -121,13 +130,19 @@ const Quiz = () => {
       <div className="space-y-10">
         {quizData.map((q, i) => (
           <div key={i} className="bg-[#2c2c2c] p-6 rounded-xl shadow-lg">
-            <h2 className="text-lg md:text-xl font-semibold mb-4">{i + 1}. {q.question}</h2>
+            <h2 className="text-lg md:text-xl font-semibold mb-4">
+              {i + 1}. {q.question}
+            </h2>
             <div className="grid gap-3 md:w-[80%]">
               {q.options.map((opt, j) => (
                 <label
                   key={j}
                   className={`p-3 rounded-lg border cursor-pointer transition-all
-                    ${selectedOptions[i] === j ? "bg-purple-600 border-purple-400" : "bg-[#3a3a3a] border-[#555]"}
+                    ${
+                      selectedOptions[i] === j
+                        ? "bg-purple-600 border-purple-400"
+                        : "bg-[#3a3a3a] border-[#555]"
+                    }
                   `}
                 >
                   <input

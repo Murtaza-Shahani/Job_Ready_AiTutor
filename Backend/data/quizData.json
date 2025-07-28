@@ -2,131 +2,131 @@
   {
     "question": "Which keyword is used to declare a variable in JavaScript?",
     "options": [
-      "int",
       "string",
+      "variable",
       "var",
-      "variable"
+      "int"
     ],
     "answerIndex": 2
   },
   {
-    "question": "What is the result of '5' + 5 in JavaScript?",
+    "question": "What is the correct way to write a JavaScript array?",
     "options": [
-      "10",
-      "55",
+      "var colors = \"red\", \"green\", \"blue\"",
+      "var colors = 1, 2, 3",
+      "var colors = [\"red\", \"green\", \"blue\"]",
+      "var colors = (red, green, blue)"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "Which operator is used to assign a value to a variable?",
+    "options": [
+      "==",
+      "=",
+      "+",
+      "-"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "What will the following code output: `console.log(typeof 42);`?",
+    "options": [
+      "string",
+      "number",
+      "boolean",
+      "undefined"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "How do you write an IF statement in JavaScript?",
+    "options": [
+      "if i == 5 then",
+      "if (i == 5)",
+      "if i = 5 then",
+      "if i = 5"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "What is the purpose of the `console.log()` function?",
+    "options": [
+      "To display a popup message",
+      "To write information to the console",
+      "To read user input",
+      "To change the background color of the page"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which of the following is a valid JavaScript comment?",
+    "options": [
+      "<!-- This is a comment -->",
+      "// This is a comment",
+      "/* This is a comment */",
+      "All of the above"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "What is the result of `3 + '3'` in JavaScript?",
+    "options": [
+      "6",
+      "33",
       "Error",
       "NaN"
     ],
     "answerIndex": 1
   },
   {
-    "question": "Which of the following is NOT a primitive data type in JavaScript?",
+    "question": "How do you call a function named 'myFunction'?",
     "options": [
-      "string",
+      "call myFunction",
+      "myFunction()",
+      "call function myFunction",
+      "function myFunction()"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which of the following is NOT a JavaScript data type?",
+    "options": [
       "number",
+      "string",
       "boolean",
-      "object"
+      "character"
     ],
     "answerIndex": 3
   },
   {
-    "question": "How do you write a single-line comment in JavaScript?",
+    "question": "What does NaN stand for in JavaScript?",
     "options": [
-      "// This is a comment",
-      "/* This is a comment */",
-      "# This is a comment",
-      "-- This is a comment"
+      "Not a Number",
+      "Null and Nothing",
+      "No Available Number",
+      "Not a Name"
     ],
     "answerIndex": 0
   },
   {
-    "question": "What does DOM stand for?",
+    "question": "What is the correct JavaScript syntax to open a new window called 'w2' ?",
     "options": [
-      "Document Object Model",
-      "Data Object Model",
-      "Digital Object Management",
-      "Direct Object Manipulation"
-    ],
-    "answerIndex": 0
-  },
-  {
-    "question": "Which operator is used for strict equality in JavaScript?",
-    "options": [
-      "==",
-      "=",
-      "===",
-      "!="
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "How do you call a function named 'myFunction' in JavaScript?",
-    "options": [
-      "call myFunction()",
-      "myFunction",
-      "myFunction()",
-      "call(myFunction)"
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "What is the purpose of the 'typeof' operator?",
-    "options": [
-      "To determine the type of a variable",
-      "To assign a type to a variable",
-      "To convert a variable to a different type",
-      "To delete a variable"
-    ],
-    "answerIndex": 0
-  },
-  {
-    "question": "Which built-in function is used to display data in the console?",
-    "options": [
-      "alert()",
-      "prompt()",
-      "console.log()",
-      "display()"
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "What is the value of 'true == 1' in JavaScript?",
-    "options": [
-      "true",
-      "false",
-      "undefined",
-      "Error"
-    ],
-    "answerIndex": 0
-  },
-  {
-    "question": "Which method is used to add an element to the end of an array?",
-    "options": [
-      "push()",
-      "pop()",
-      "shift()",
-      "unshift()"
-    ],
-    "answerIndex": 0
-  },
-  {
-    "question": "What is the result of 2 + 2 * 2 in JavaScript?",
-    "options": [
-      "4",
-      "6",
-      "8",
-      "12"
+      "w2 = window.new(\"http://www.example.com\");",
+      "w2 = window.open(\"http://www.example.com\");",
+      "w2 = new.window(\"http://www.example.com\");",
+      "None of the above"
     ],
     "answerIndex": 1
   },
   {
-    "question": "Which of the following is a valid way to write an 'if' statement in JavaScript?",
+    "question": "How do you round the number 7.25 to the nearest integer?",
     "options": [
-      "if x > 5 then {}",
-      "if (x > 5) {}",
-      "if x > 5 {}",
-      "if: x > 5 {}"
+      "Math.round(7.25)",
+      "round(7.25)",
+      "Math.rnd(7.25)",
+      "rnd(7.25)"
     ],
-    "answerIndex": 1
+    "answerIndex": 0
   }
 ]
