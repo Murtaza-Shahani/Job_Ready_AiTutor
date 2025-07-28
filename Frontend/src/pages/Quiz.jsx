@@ -6,15 +6,28 @@ const Quiz = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const [subject, setSubject] = useState("");
+  const [level, setLevel] = useState("");
+  const [hasStarted, setHasStarted] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { subject, level } = location.state || {};
+  // Start with state if available
+  useEffect(() => {
+    const initSubject = location.state?.subject || "";
+    const initLevel = location.state?.level || "";
+    if (initSubject && initLevel) {
+      setSubject(initSubject);
+      setLevel(initLevel);
+      handleStart(initSubject, initLevel); // auto start
+    }
+  }, []);
 
-  // ✅ Reusable fetchQuiz function
-  const fetchQuiz = async () => {
+  const fetchQuiz = async (subject, level) => {
     setLoading(true);
     try {
       const res = await fetch("http://localhost:5000/api/quiz/generate", {
@@ -28,9 +41,9 @@ const Quiz = () => {
 
       setQuizData(data.data);
       setSelectedOptions(Array(data.data.length).fill(null));
-      setTimeLeft(data.data.length * 60); // 1 minute per question
+      setTimeLeft(data.data.length * 60);
       setSubmitted(false);
-      console.log("✅ New quiz loaded");
+      setError("");
     } catch (err) {
       setError(err.message || "Something went wrong");
     } finally {
@@ -38,32 +51,14 @@ const Quiz = () => {
     }
   };
 
-  useEffect(() => {
+  const handleStart = async (subject, level) => {
     if (!subject || !level) {
-      setError("Missing subject or level.");
-      setLoading(false);
+      setError("Please enter both subject and level.");
       return;
     }
-    fetchQuiz(); // 👈 trigger on load
-  }, [subject, level]);
-
-  // Timer
-  useEffect(() => {
-    if (submitted || loading || error) return;
-
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          handleSubmit();
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [submitted, loading, error]);
+    await fetchQuiz(subject, level);
+    setHasStarted(true);
+  };
 
   const handleOptionChange = (questionIndex, optionIndex) => {
     const updated = [...selectedOptions];
@@ -75,10 +70,14 @@ const Quiz = () => {
     setSubmitted(true);
   };
 
-  // ✅ Updated: regenerate quiz
   const handleTryAgain = () => {
-    console.log("🔄 Triggered Try Again - Regenerating Quiz...");
-    fetchQuiz();
+    setQuizData([]);
+    setSelectedOptions([]);
+    setSubmitted(false);
+    setHasStarted(false);
+    setSubject("");
+    setLevel("");
+    setError("");
   };
 
   const formatTime = (seconds) => {
@@ -96,11 +95,64 @@ const Quiz = () => {
     }, 0);
   };
 
+  useEffect(() => {
+    if (submitted || loading || error || !hasStarted) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          handleSubmit();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [submitted, loading, error, hasStarted]);
+
+  if (!hasStarted) {
+    return (
+      <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center space-y-6">
+        <h1 className="text-3xl font-bold text-purple-400">🧪 Start a New Quiz</h1>
+
+        {error && <div className="text-red-400">{error}</div>}
+
+        <div className="space-y-4 w-[300px]">
+          <input
+            type="text"
+            placeholder="Enter subject (e.g., JavaScript)"
+            className="w-full p-2 rounded-md text-black bg-white"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+          />
+          <select
+            className="w-full p-2 rounded-md text-black bg-white"
+            value={level}
+            onChange={(e) => setLevel(e.target.value)}
+          >
+            <option value="">Select level</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+
+          <button
+            className="w-full py-2 bg-purple-600 rounded-md hover:bg-purple-700 transition"
+            onClick={() => handleStart(subject, level)}
+          >
+            🚀 Start Quiz
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (loading) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center text-xl">
-        ⏳ Generating quiz for{" "}
-        <span className="text-sky-400 mx-1">{subject}</span>...
+        ⏳ Generating quiz for <span className="text-sky-400 mx-1">{subject}</span>...
       </div>
     );
   }
@@ -121,8 +173,7 @@ const Quiz = () => {
         </h1>
         {!submitted && (
           <div className="text-lg font-semibold text-yellow-400">
-            ⏳ Time Left:{" "}
-            <span className="font-mono">{formatTime(timeLeft)}</span>
+            ⏳ Time Left: <span className="font-mono">{formatTime(timeLeft)}</span>
           </div>
         )}
       </div>

@@ -1,132 +1,132 @@
 [
   {
-    "question": "Which keyword is used to declare a variable in JavaScript?",
+    "question": "What is the primary purpose of middleware in Express.js?",
     "options": [
-      "string",
-      "variable",
-      "var",
-      "int"
+      "To define routes for handling requests.",
+      "To manage database connections.",
+      "To execute code before or after a route handler.",
+      "To render HTML templates."
     ],
     "answerIndex": 2
   },
   {
-    "question": "What is the correct way to write a JavaScript array?",
+    "question": "Which of the following methods is used to send JSON data in an Express.js response?",
     "options": [
-      "var colors = \"red\", \"green\", \"blue\"",
-      "var colors = 1, 2, 3",
-      "var colors = [\"red\", \"green\", \"blue\"]",
-      "var colors = (red, green, blue)"
+      "res.render()",
+      "res.send()",
+      "res.json()",
+      "res.redirect()"
     ],
     "answerIndex": 2
   },
   {
-    "question": "Which operator is used to assign a value to a variable?",
+    "question": "How can you access request parameters in Express.js?",
     "options": [
-      "==",
-      "=",
-      "+",
-      "-"
+      "req.body",
+      "req.query",
+      "req.params",
+      "req.headers"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What does the `next()` function do in Express.js middleware?",
+    "options": [
+      "It terminates the request-response cycle.",
+      "It sends a response to the client.",
+      "It passes control to the next middleware function in the stack.",
+      "It restarts the current middleware function."
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "Which of the following is the correct way to define a route parameter named 'id' in Express.js?",
+    "options": [
+      "app.get('/user/:id', ...)",
+      "app.get('/user?id=', ...)",
+      "app.get('/user/id', ...)",
+      "app.get('/user/id:', ...)"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "What is the purpose of the `app.use()` method in Express.js?",
+    "options": [
+      "To define a specific route handler.",
+      "To register middleware functions.",
+      "To start the Express.js server.",
+      "To connect to a database."
     ],
     "answerIndex": 1
   },
   {
-    "question": "What will the following code output: `console.log(typeof 42);`?",
+    "question": "How can you set a cookie in an Express.js response?",
     "options": [
-      "string",
-      "number",
-      "boolean",
-      "undefined"
+      "res.sendCookie()",
+      "res.setCookie()",
+      "res.cookie()",
+      "res.setHeader('Set-Cookie', ...)"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is the role of the `body-parser` middleware in Express.js?",
+    "options": [
+      "To compress response data.",
+      "To parse incoming request bodies.",
+      "To validate user input.",
+      "To handle file uploads."
     ],
     "answerIndex": 1
   },
   {
-    "question": "How do you write an IF statement in JavaScript?",
+    "question": "Which of the following is a commonly used template engine with Express.js?",
     "options": [
-      "if i == 5 then",
-      "if (i == 5)",
-      "if i = 5 then",
-      "if i = 5"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "What is the purpose of the `console.log()` function?",
-    "options": [
-      "To display a popup message",
-      "To write information to the console",
-      "To read user input",
-      "To change the background color of the page"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "Which of the following is a valid JavaScript comment?",
-    "options": [
-      "<!-- This is a comment -->",
-      "// This is a comment",
-      "/* This is a comment */",
-      "All of the above"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "What is the result of `3 + '3'` in JavaScript?",
-    "options": [
-      "6",
-      "33",
-      "Error",
-      "NaN"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "How do you call a function named 'myFunction'?",
-    "options": [
-      "call myFunction",
-      "myFunction()",
-      "call function myFunction",
-      "function myFunction()"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "Which of the following is NOT a JavaScript data type?",
-    "options": [
-      "number",
-      "string",
-      "boolean",
-      "character"
+      "React",
+      "Angular",
+      "Vue",
+      "Pug"
     ],
     "answerIndex": 3
   },
   {
-    "question": "What does NaN stand for in JavaScript?",
+    "question": "How do you handle errors in Express.js middleware?",
     "options": [
-      "Not a Number",
-      "Null and Nothing",
-      "No Available Number",
-      "Not a Name"
-    ],
-    "answerIndex": 0
-  },
-  {
-    "question": "What is the correct JavaScript syntax to open a new window called 'w2' ?",
-    "options": [
-      "w2 = window.new(\"http://www.example.com\");",
-      "w2 = window.open(\"http://www.example.com\");",
-      "w2 = new.window(\"http://www.example.com\");",
-      "None of the above"
+      "Using try-catch blocks only.",
+      "By passing the error to the `next()` function.",
+      "By using `res.error()`.",
+      "Express.js automatically handles all errors."
     ],
     "answerIndex": 1
   },
   {
-    "question": "How do you round the number 7.25 to the nearest integer?",
+    "question": "What does `app.listen(3000)` do in an Express application?",
     "options": [
-      "Math.round(7.25)",
-      "round(7.25)",
-      "Math.rnd(7.25)",
-      "rnd(7.25)"
+      "It connects to a database on port 3000.",
+      "It defines a route that listens for requests on port 3000.",
+      "It starts the Express server and listens for connections on port 3000.",
+      "It redirects the user to port 3000."
     ],
-    "answerIndex": 0
+    "answerIndex": 2
+  },
+  {
+    "question": "How do you serve static files (e.g., images, CSS) in Express.js?",
+    "options": [
+      "Using the `res.static()` method.",
+      "Using the `express.static()` middleware.",
+      "By defining routes for each file.",
+      "Express.js cannot serve static files."
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "What is the purpose of `res.redirect()` in Express.js?",
+    "options": [
+      "To send JSON data to the client.",
+      "To render a template.",
+      "To send an HTTP redirect response.",
+      "To terminate the request-response cycle."
+    ],
+    "answerIndex": 2
   }
 ]
