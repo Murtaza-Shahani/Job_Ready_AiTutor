@@ -12,18 +12,21 @@ const Quiz = () => {
   const [subject, setSubject] = useState("");
   const [level, setLevel] = useState("");
   const [hasStarted, setHasStarted] = useState(false);
+  const [isAutoStart, setIsAutoStart] = useState(false); // NEW
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Start with state if available
+  // Auto-start if navigated from Learn.jsx
   useEffect(() => {
     const initSubject = location.state?.subject || "";
     const initLevel = location.state?.level || "";
+
     if (initSubject && initLevel) {
       setSubject(initSubject);
       setLevel(initLevel);
-      handleStart(initSubject, initLevel); // auto start
+      setIsAutoStart(true);
+      handleStart(initSubject, initLevel);
     }
   }, []);
 
@@ -78,6 +81,7 @@ const Quiz = () => {
     setSubject("");
     setLevel("");
     setError("");
+    setIsAutoStart(false); // Reset to show input form again
   };
 
   const formatTime = (seconds) => {
@@ -112,7 +116,7 @@ const Quiz = () => {
     return () => clearInterval(timer);
   }, [submitted, loading, error, hasStarted]);
 
-  if (!hasStarted) {
+  if (!hasStarted && !isAutoStart) {
     return (
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center space-y-6">
         <h1 className="text-3xl font-bold text-purple-400">🧪 Start a New Quiz</h1>
@@ -152,7 +156,7 @@ const Quiz = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center text-xl">
-        ⏳ Generating quiz for <span className="text-sky-400 mx-1">{subject}</span>...
+        ⏳ Generating quiz{subject && <> for <span className="text-sky-400 mx-1">{subject}</span></>}...
       </div>
     );
   }

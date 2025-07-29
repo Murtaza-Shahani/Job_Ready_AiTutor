@@ -1,132 +1,132 @@
 [
   {
-    "question": "What is the primary purpose of middleware in Express.js?",
+    "question": "What is Node.js?",
     "options": [
-      "To define routes for handling requests.",
-      "To manage database connections.",
-      "To execute code before or after a route handler.",
-      "To render HTML templates."
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "Which of the following methods is used to send JSON data in an Express.js response?",
-    "options": [
-      "res.render()",
-      "res.send()",
-      "res.json()",
-      "res.redirect()"
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "How can you access request parameters in Express.js?",
-    "options": [
-      "req.body",
-      "req.query",
-      "req.params",
-      "req.headers"
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "What does the `next()` function do in Express.js middleware?",
-    "options": [
-      "It terminates the request-response cycle.",
-      "It sends a response to the client.",
-      "It passes control to the next middleware function in the stack.",
-      "It restarts the current middleware function."
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "Which of the following is the correct way to define a route parameter named 'id' in Express.js?",
-    "options": [
-      "app.get('/user/:id', ...)",
-      "app.get('/user?id=', ...)",
-      "app.get('/user/id', ...)",
-      "app.get('/user/id:', ...)"
+      "A JavaScript runtime environment",
+      "A JavaScript library",
+      "A JavaScript framework",
+      "A JavaScript preprocessor"
     ],
     "answerIndex": 0
   },
   {
-    "question": "What is the purpose of the `app.use()` method in Express.js?",
+    "question": "Which command is used to initialize a new Node.js project with npm?",
     "options": [
-      "To define a specific route handler.",
-      "To register middleware functions.",
-      "To start the Express.js server.",
-      "To connect to a database."
+      "npm start",
+      "npm init",
+      "npm install",
+      "npm run"
     ],
     "answerIndex": 1
   },
   {
-    "question": "How can you set a cookie in an Express.js response?",
+    "question": "What is the purpose of the 'require()' function in Node.js?",
     "options": [
-      "res.sendCookie()",
-      "res.setCookie()",
-      "res.cookie()",
-      "res.setHeader('Set-Cookie', ...)"
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "What is the role of the `body-parser` middleware in Express.js?",
-    "options": [
-      "To compress response data.",
-      "To parse incoming request bodies.",
-      "To validate user input.",
-      "To handle file uploads."
+      "To define a new variable",
+      "To include a module",
+      "To execute a script",
+      "To create a function"
     ],
     "answerIndex": 1
   },
   {
-    "question": "Which of the following is a commonly used template engine with Express.js?",
+    "question": "Which module is commonly used for creating web servers in Node.js?",
     "options": [
-      "React",
-      "Angular",
-      "Vue",
-      "Pug"
+      "fs",
+      "http",
+      "path",
+      "os"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "What does NPM stand for?",
+    "options": [
+      "Node Package Manager",
+      "Node Project Manager",
+      "New Project Module",
+      "Node Program Module"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "Which of the following is NOT a built-in module in Node.js?",
+    "options": [
+      "fs",
+      "http",
+      "path",
+      "lodash"
     ],
     "answerIndex": 3
   },
   {
-    "question": "How do you handle errors in Express.js middleware?",
+    "question": "How do you install a package using npm?",
     "options": [
-      "Using try-catch blocks only.",
-      "By passing the error to the `next()` function.",
-      "By using `res.error()`.",
-      "Express.js automatically handles all errors."
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "What does `app.listen(3000)` do in an Express application?",
-    "options": [
-      "It connects to a database on port 3000.",
-      "It defines a route that listens for requests on port 3000.",
-      "It starts the Express server and listens for connections on port 3000.",
-      "It redirects the user to port 3000."
+      "npm add <package_name>",
+      "npm get <package_name>",
+      "npm install <package_name>",
+      "npm use <package_name>"
     ],
     "answerIndex": 2
   },
   {
-    "question": "How do you serve static files (e.g., images, CSS) in Express.js?",
+    "question": "What is the purpose of the 'package.json' file?",
     "options": [
-      "Using the `res.static()` method.",
-      "Using the `express.static()` middleware.",
-      "By defining routes for each file.",
-      "Express.js cannot serve static files."
+      "To store the source code",
+      "To manage dependencies and project metadata",
+      "To define the server configuration",
+      "To store environment variables"
     ],
     "answerIndex": 1
   },
   {
-    "question": "What is the purpose of `res.redirect()` in Express.js?",
+    "question": "Which of these is an asynchronous function?",
     "options": [
-      "To send JSON data to the client.",
-      "To render a template.",
-      "To send an HTTP redirect response.",
-      "To terminate the request-response cycle."
+      "console.log()",
+      "Math.random()",
+      "fs.readFile()",
+      "JSON.stringify()"
     ],
     "answerIndex": 2
+  },
+  {
+    "question": "What is the global object in Node.js, similar to 'window' in browsers?",
+    "options": [
+      "document",
+      "global",
+      "process",
+      "self"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "How do you export a module in Node.js?",
+    "options": [
+      "using import",
+      "using export",
+      "using module.exports",
+      "using require"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is the purpose of the 'process' object in Node.js?",
+    "options": [
+      "To manage files",
+      "To interact with the operating system process",
+      "To handle network requests",
+      "To define routes"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "What is a callback function in Node.js?",
+    "options": [
+      "A function that returns a value",
+      "A function passed as an argument to another function, to be executed later",
+      "A function that handles errors",
+      "A function that defines a module"
+    ],
+    "answerIndex": 1
   }
 ]

@@ -89,9 +89,9 @@ const Learn = () => {
         >
           <option value="">Select Subject</option>
           <option value="JavaScript">JavaScript</option>
-          <option value="React">React</option>
-          <option value="Node">Node</option>
-          <option value="Express">Express</option>
+          <option value="React">React.js</option>
+          <option value="Node">Node.js</option>
+          <option value="Express">Express.js</option>
           <option value="MongoDB">MongoDB</option>
           <option value="Tailwind CSS">Tailwind CSS</option>
           <option value="other">Other</option>
