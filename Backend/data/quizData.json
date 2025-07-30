@@ -1,131 +1,131 @@
 [
   {
-    "question": "What is Node.js?",
+    "question": "What is the primary role of an Operating System (OS)?",
     "options": [
-      "A JavaScript runtime environment",
-      "A JavaScript library",
-      "A JavaScript framework",
-      "A JavaScript preprocessor"
+      "To browse the internet",
+      "To manage hardware and software resources",
+      "To create documents",
+      "To play video games"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "Which of the following is an example of an operating system?",
+    "options": [
+      "Microsoft Word",
+      "Google Chrome",
+      "Windows 10",
+      "Adobe Photoshop"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is the kernel?",
+    "options": [
+      "The outer shell of a computer",
+      "The core of the OS",
+      "A type of computer virus",
+      "A peripheral device"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "What does GUI stand for?",
+    "options": [
+      "General User Interface",
+      "Graphical User Interface",
+      "Giant User Instruction",
+      "Gaming User Input"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "What is multitasking?",
+    "options": [
+      "Running multiple programs at the same time",
+      "Connecting to multiple networks",
+      "Using multiple monitors",
+      "Writing multiple documents"
     ],
     "answerIndex": 0
   },
   {
-    "question": "Which command is used to initialize a new Node.js project with npm?",
+    "question": "What is a file system?",
     "options": [
-      "npm start",
-      "npm init",
-      "npm install",
-      "npm run"
+      "A system for printing files",
+      "A system for organizing and storing files",
+      "A system for deleting files",
+      "A system for creating files"
     ],
     "answerIndex": 1
   },
   {
-    "question": "What is the purpose of the 'require()' function in Node.js?",
+    "question": "Which of the following is a type of user interface?",
     "options": [
-      "To define a new variable",
-      "To include a module",
-      "To execute a script",
-      "To create a function"
+      "CPU",
+      "RAM",
+      "Command Line Interface (CLI)",
+      "GPU"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is a device driver?",
+    "options": [
+      "A program that controls a printer",
+      "A program that enables the OS to communicate with hardware",
+      "A program that defragments a hard drive",
+      "A program that scans for viruses"
     ],
     "answerIndex": 1
   },
   {
-    "question": "Which module is commonly used for creating web servers in Node.js?",
+    "question": "What is the purpose of virtual memory?",
     "options": [
-      "fs",
-      "http",
-      "path",
-      "os"
+      "To increase the physical size of the monitor",
+      "To allow a computer to run more programs than physical memory allows",
+      "To speed up internet browsing",
+      "To create virtual machines"
     ],
     "answerIndex": 1
   },
   {
-    "question": "What does NPM stand for?",
+    "question": "What is a process?",
     "options": [
-      "Node Package Manager",
-      "Node Project Manager",
-      "New Project Module",
-      "Node Program Module"
+      "A running program",
+      "A file extension",
+      "A type of computer virus",
+      "A computer peripheral"
     ],
     "answerIndex": 0
   },
   {
-    "question": "Which of the following is NOT a built-in module in Node.js?",
+    "question": "Which operating system is open source?",
     "options": [
-      "fs",
-      "http",
-      "path",
-      "lodash"
-    ],
-    "answerIndex": 3
-  },
-  {
-    "question": "How do you install a package using npm?",
-    "options": [
-      "npm add <package_name>",
-      "npm get <package_name>",
-      "npm install <package_name>",
-      "npm use <package_name>"
+      "Windows",
+      "macOS",
+      "Linux",
+      "All of the above"
     ],
     "answerIndex": 2
   },
   {
-    "question": "What is the purpose of the 'package.json' file?",
+    "question": "What is the function of a scheduler in an OS?",
     "options": [
-      "To store the source code",
-      "To manage dependencies and project metadata",
-      "To define the server configuration",
-      "To store environment variables"
+      "To plan out your day",
+      "To determine which process gets CPU time",
+      "To schedule meetings",
+      "To schedule backups"
     ],
     "answerIndex": 1
   },
   {
-    "question": "Which of these is an asynchronous function?",
+    "question": "What is the purpose of an API (Application Programming Interface)?",
     "options": [
-      "console.log()",
-      "Math.random()",
-      "fs.readFile()",
-      "JSON.stringify()"
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "What is the global object in Node.js, similar to 'window' in browsers?",
-    "options": [
-      "document",
-      "global",
-      "process",
-      "self"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "How do you export a module in Node.js?",
-    "options": [
-      "using import",
-      "using export",
-      "using module.exports",
-      "using require"
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "What is the purpose of the 'process' object in Node.js?",
-    "options": [
-      "To manage files",
-      "To interact with the operating system process",
-      "To handle network requests",
-      "To define routes"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "What is a callback function in Node.js?",
-    "options": [
-      "A function that returns a value",
-      "A function passed as an argument to another function, to be executed later",
-      "A function that handles errors",
-      "A function that defines a module"
+      "To connect hardware devices",
+      "To allow applications to interact with the OS",
+      "To prevent viruses",
+      "To format a hard drive"
     ],
     "answerIndex": 1
   }

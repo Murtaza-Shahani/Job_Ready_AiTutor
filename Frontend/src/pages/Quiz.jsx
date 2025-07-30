@@ -12,7 +12,7 @@ const Quiz = () => {
   const [subject, setSubject] = useState("");
   const [level, setLevel] = useState("");
   const [hasStarted, setHasStarted] = useState(false);
-  const [isAutoStart, setIsAutoStart] = useState(false); // NEW
+  const [isAutoStart, setIsAutoStart] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -59,8 +59,9 @@ const Quiz = () => {
       setError("Please enter both subject and level.");
       return;
     }
-    await fetchQuiz(subject, level);
+
     setHasStarted(true);
+    await fetchQuiz(subject, level);
   };
 
   const handleOptionChange = (questionIndex, optionIndex) => {
@@ -81,7 +82,7 @@ const Quiz = () => {
     setSubject("");
     setLevel("");
     setError("");
-    setIsAutoStart(false); // Reset to show input form again
+    setIsAutoStart(false);
   };
 
   const formatTime = (seconds) => {
@@ -115,6 +116,14 @@ const Quiz = () => {
 
     return () => clearInterval(timer);
   }, [submitted, loading, error, hasStarted]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-black text-white flex items-center justify-center text-xl">
+        ⏳ Generating quiz{subject && <> for <span className="text-sky-400 mx-1">{subject}</span></>}...
+      </div>
+    );
+  }
 
   if (!hasStarted && !isAutoStart) {
     return (
@@ -153,14 +162,6 @@ const Quiz = () => {
     );
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center text-xl">
-        ⏳ Generating quiz{subject && <> for <span className="text-sky-400 mx-1">{subject}</span></>}...
-      </div>
-    );
-  }
-
   if (error) {
     return (
       <div className="min-h-screen bg-black text-red-400 flex items-center justify-center text-xl">
@@ -173,7 +174,7 @@ const Quiz = () => {
     <div className="min-h-screen bg-[#1a1a1a] text-white py-10 px-4 md:px-16">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl md:text-4xl font-bold text-purple-400 animate-pulse">
-          🧠 Quiz Time
+          � Quiz Time
         </h1>
         {!submitted && (
           <div className="text-lg font-semibold text-yellow-400">
