@@ -67,6 +67,11 @@ const Learn = () => {
     setResponse("");
     setDisplayedContent("");
   };
+  //handle Quiz
+  const handleGiveQuiz = () => {
+    const quizSubject = subject === "other" ? customSubject : subject;
+    navigate("/quiz", { state: { subject: quizSubject, level } });
+  };
 
   return (
     <div className="min-h-screen bg-[#0f172a] text-[#f1f5f9] py-16 px-6 md:px-16">
@@ -174,11 +179,12 @@ const Learn = () => {
             >
               🔄 New Topic
             </button>
+
             <button
-              onClick={() => navigate("/quiz", { state: { subject, level } })}
+              onClick={handleGiveQuiz}
               className="px-4 py-2 bg-[#9333ea] text-white rounded-md hover:bg-[#7e22ce] transition"
             >
-              🧠 Give Quiz
+              Give Quiz
             </button>
           </div>
         </div>
