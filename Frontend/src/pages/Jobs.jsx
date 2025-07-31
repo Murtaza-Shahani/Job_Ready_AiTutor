@@ -5,46 +5,56 @@ const Jobs = () => {
   const [level, setLevel] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
   const [customLocation, setCustomLocation] = useState('');
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  // Dummy data for preview
-  const dummyJobs = [
-    {
-      id: 1,
-      title: 'Frontend Developer',
-      techStack: 'React, Tailwind',
-      level: 'Junior',
-      location: 'Remote',
-      company: 'TechNova',
-      email: 'hr@technova.com',
-    },
-    {
-      id: 2,
-      title: 'Backend Engineer',
-      techStack: 'Node.js, MongoDB',
-      level: 'Mid Level',
-      location: 'Karachi',
-      company: 'CodeWorks',
-      email: 'jobs@codeworks.io',
-    },
-    {
-      id: 3,
-      title: 'ML Engineer',
-      techStack: 'Python, TensorFlow',
-      level: 'Senior',
-      location: 'Islamabad',
-      company: 'AI Vision',
-      email: 'careers@aivision.ai',
-    },
-  ];
+  const handleFindJobs = async () => {
+    setError('');
+    if (!techStack || !level || !selectedLocation) {
+      setError('❌ Please fill in all fields.');
+      return;
+    }
+
+    const finalLocation =
+      selectedLocation === 'Other' ? customLocation.trim() : selectedLocation;
+    if (!finalLocation) {
+      setError('❌ Please provide a valid location.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:5000/api/jobs/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          stack: techStack,
+          level,
+          location: finalLocation,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result?.error || 'Something went wrong');
+      }
+
+      setJobs(result.data);
+    } catch (err) {
+      setError(err.message || '❌ Failed to fetch jobs');
+      setJobs([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-white">
-      {/* Background Image and Header */}
-      <div
-        className="bg-cover bg-center h-[300px] flex items-center justify-center"
-        
-      >
-        <div className=" bg-opacity-60 p-6  max-w-3xl text-center">
+      {/* Header */}
+      <div className="bg-cover bg-center h-[300px] flex items-center justify-center">
+        <div className="bg-opacity-60 p-6 max-w-3xl text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Explore Jobs Based on Your Interests</h1>
           <p className="text-lg">Filter jobs by tech stack, level of expertise, and location preferences.</p>
         </div>
@@ -52,7 +62,7 @@ const Jobs = () => {
 
       {/* Filter Form */}
       <div className="max-w-3xl mx-auto bg-[#2a2a2a] p-6 rounded-xl shadow-lg mb-12 mt-10">
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={(e) => e.preventDefault()}>
           {/* Tech Stack */}
           <div>
             <label className="block mb-1 font-medium">Tech Stack</label>
@@ -73,7 +83,7 @@ const Jobs = () => {
                 type="text"
                 placeholder="Enter custom stack"
                 className="mt-2 w-full p-2 rounded bg-[#1f1f1f] text-white"
-                
+                onChange={(e) => setTechStack(e.target.value)}
               />
             )}
           </div>
@@ -122,29 +132,38 @@ const Jobs = () => {
           </div>
         </form>
 
+        {/* Submit Button */}
         <div className="mt-6 text-center">
           <button
             className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg font-semibold transition"
-            onClick={() => console.log('Submit filter')} // Will replace with backend integration later
+            onClick={handleFindJobs}
+            disabled={loading}
           >
-            Find Jobs
+            {loading ? 'Finding Jobs for You...' : 'Find Jobs'}
           </button>
+          {error && <p className="text-red-400 mt-2">{error}</p>}
         </div>
       </div>
 
-      {/* Job Listings Section */}
+      {/* Job Listings */}
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
-        {dummyJobs.map((job) => (
+        {!loading && jobs.length === 0 && (
+          <p className="text-center text-gray-400 col-span-full">No jobs found. Try a different filter.</p>
+        )}
+
+        {jobs.map((job, index) => (
           <div
-            key={job.id}
+            key={index}
             className="bg-[#2a2a2a] p-5 rounded-xl shadow-md hover:shadow-lg transition"
           >
             <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
             <p className="text-sm mb-1"><span className="font-medium">Company:</span> {job.company}</p>
-            <p className="text-sm mb-1"><span className="font-medium">Tech Stack:</span> {job.techStack}</p>
-            <p className="text-sm mb-1"><span className="font-medium">Level:</span> {job.level}</p>
             <p className="text-sm mb-1"><span className="font-medium">Location:</span> {job.location}</p>
-            <p className="text-sm"><span className="font-medium">HR Email:</span> <a href={`mailto:${job.email}`} className="text-blue-400 underline">{job.email}</a></p>
+            <p className="text-sm mb-1"><span className="font-medium">Type:</span> {job.type}</p>
+            <p className="text-sm mb-2"><span className="font-medium">Description:</span> {job.description}</p>
+            <p className="text-sm"><span className="font-medium">HR Email:</span>{' '}
+              <a href={`mailto:${job.email}`} className="text-blue-400 underline">{job.email}</a>
+            </p>
           </div>
         ))}
       </div>
