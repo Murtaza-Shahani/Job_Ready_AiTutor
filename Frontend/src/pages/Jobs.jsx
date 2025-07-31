@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Jobs = () => {
   const [techStack, setTechStack] = useState('');
@@ -9,6 +10,8 @@ const Jobs = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const navigate = useNavigate();
+
   const handleFindJobs = async () => {
     setError('');
     if (!techStack || !level || !selectedLocation) {
@@ -18,6 +21,7 @@ const Jobs = () => {
 
     const finalLocation =
       selectedLocation === 'Other' ? customLocation.trim() : selectedLocation;
+
     if (!finalLocation) {
       setError('❌ Please provide a valid location.');
       return;
@@ -48,6 +52,15 @@ const Jobs = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const resetForm = () => {
+    setTechStack('');
+    setLevel('');
+    setSelectedLocation('');
+    setCustomLocation('');
+    setJobs([]);
+    setError('');
   };
 
   return (
@@ -146,7 +159,13 @@ const Jobs = () => {
       </div>
 
       {/* Job Listings */}
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
+      {jobs.length > 0 && (
+        <div className="text-center text-2xl font-bold mb-6 animate-fade-in">
+          Jobs for you 👇
+        </div>
+      )}
+
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
         {!loading && jobs.length === 0 && (
           <p className="text-center text-gray-400 col-span-full">No jobs found. Try a different filter.</p>
         )}
@@ -154,7 +173,7 @@ const Jobs = () => {
         {jobs.map((job, index) => (
           <div
             key={index}
-            className="bg-[#2a2a2a] p-5 rounded-xl shadow-md hover:shadow-lg transition"
+            className="bg-[#2a2a2a] p-5 rounded-xl shadow-md hover:shadow-lg transform hover:scale-[1.02] transition duration-300"
           >
             <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
             <p className="text-sm mb-1"><span className="font-medium">Company:</span> {job.company}</p>
@@ -167,6 +186,25 @@ const Jobs = () => {
           </div>
         ))}
       </div>
+
+      {/* Action Buttons Below Cards */}
+      {jobs.length > 0 && (
+  <div className="flex flex-col md:flex-row justify-center items-center gap-6 ">
+    <button
+      className="bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-6 rounded-lg font-semibold shadow-md transition "
+      onClick={resetForm}
+    >
+      🔄 Explore Other Jobs
+    </button>
+    <button
+      className="bg-green-600 hover:bg-green-700 text-white py-2 px-6 rounded-lg font-semibold shadow-md transition"
+      onClick={() => navigate('/cover-letter')}
+    >
+      ✍️ Get Cover Letter
+    </button>
+  </div>
+)}
+
     </div>
   );
 };

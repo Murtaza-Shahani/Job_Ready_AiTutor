@@ -1,37 +1,37 @@
 [
   {
-    "title": "Junior Backend Developer (Node.js)",
-    "company": "Confiz",
-    "location": "Karachi",
-    "description": "Seeking a Junior Backend Developer proficient in Node.js to build and maintain server-side logic and APIs.",
-    "email": "careers@confiz.com"
+    "title": "Mid-Level Backend Engineer (Java)",
+    "company": "Emirates Group",
+    "location": "Dubai, UAE",
+    "description": "Develop and maintain Java-based backend systems for Emirates' loyalty program. Strong experience with Spring Boot required.",
+    "email": "recruitment@emirates.com"
   },
   {
-    "title": "Associate Software Engineer - Backend",
-    "company": "Systems Limited",
-    "location": "Karachi",
-    "description": "Join our team as an Associate Software Engineer focusing on backend development, contributing to large-scale projects.",
-    "email": "careers@systemsltd.com"
+    "title": "Backend Developer (Node.js)",
+    "company": "Careem",
+    "location": "Dubai, UAE",
+    "description": "Building scalable and reliable backend services for Careem's ride-hailing platform using Node.js and microservices architecture.",
+    "email": "careers@careem.com"
   },
   {
-    "title": "Junior Python Developer",
-    "company": "10Pearls",
-    "location": "Karachi",
-    "description": "We are looking for a Junior Python Developer to assist in creating efficient and scalable backend solutions.",
-    "email": "jobs@10pearls.com"
+    "title": "Mid Backend Engineer (Python/Django)",
+    "company": "Property Finder",
+    "location": "Dubai, UAE",
+    "description": "Develop and maintain backend APIs for Property Finder's real estate platform using Python and Django framework.",
+    "email": "hr@propertyfinder.ae"
   },
   {
-    "title": "Backend Engineer - Entry Level",
-    "company": "DevBatch",
-    "location": "Karachi",
-    "description": "Entry-level Backend Engineer position to contribute to building and improving web applications using modern technologies.",
-    "email": "hr@devbatch.com"
+    "title": "Backend Engineer - Golang",
+    "company": "Souqalmal.com",
+    "location": "Dubai, UAE",
+    "description": "Designing and implementing high-performance backend systems for Souqalmal's financial comparison platform using Golang.",
+    "email": "jobs@souqalmal.com"
   },
   {
-    "title": "Junior Backend Developer (Java)",
-    "company": "Arbisoft",
-    "location": "Karachi",
-    "description": "Hiring a Junior Java Backend Developer to work on enterprise-level applications and gain valuable experience.",
-    "email": "careers@arbisoft.com"
+    "title": "Mid-level .NET Developer",
+    "company": "Axiom Telecom",
+    "location": "Dubai, UAE",
+    "description": "Develop and maintain .NET applications for Axiom's telecommunications solutions. Experience with C# and ASP.NET MVC required.",
+    "email": "hr@axiomtelecom.com"
   }
 ]
