@@ -239,7 +239,7 @@ const Quiz = () => {
               🔁 Try Again
             </button>
             <button
-              onClick={() => navigate("/listings")}
+              onClick={() => navigate("/jobs")}
               className="px-6 py-2 text-white bg-emerald-600 hover:bg-emerald-700 transition rounded-lg shadow-md"
             >
               💼 Explore Jobs

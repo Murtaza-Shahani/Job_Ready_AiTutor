@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Learn from "./pages/Learn";
 import Quiz from "./pages/Quiz";
+import Jobs from "./pages/Jobs";
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/learn" element = {<Learn/>}/>
           
           <Route path="/quiz" element = {<Quiz/>}/>
+          <Route path="/jobs" element = {<Jobs/>}/>
         </Routes>
       </BrowserRouter>
       </div>
