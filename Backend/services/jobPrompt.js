@@ -2,7 +2,7 @@
 
 export function generateJobPrompt(stack, level, location) {
   return `
-You are a job finder assistant. Based on the following inputs, return the **latest 5 job postings** in a structured JSON array format.
+You are a job finder assistant. Based on the following inputs, return the **latest 8 to 10 job postings** in a structured JSON array format.
 
 Inputs:
 - Tech Stack: ${stack}  

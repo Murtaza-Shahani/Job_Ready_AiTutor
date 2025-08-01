@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Jobs = () => {
   const [techStack, setTechStack] = useState('');
+  const [customTechStack, setCustomTechStack] = useState('');
   const [level, setLevel] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
   const [customLocation, setCustomLocation] = useState('');
@@ -27,13 +28,21 @@ const Jobs = () => {
       return;
     }
 
+    const finalStack =
+      techStack === 'Other' ? customTechStack.trim() : techStack;
+
+    if (!finalStack) {
+      setError('❌ Please provide a valid tech stack.');
+      return;
+    }
+
     setLoading(true);
     try {
       const response = await fetch('http://localhost:5000/api/jobs/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          stack: techStack,
+          stack: finalStack,
           level,
           location: finalLocation,
         }),
@@ -56,6 +65,7 @@ const Jobs = () => {
 
   const resetForm = () => {
     setTechStack('');
+    setCustomTechStack('');
     setLevel('');
     setSelectedLocation('');
     setCustomLocation('');
@@ -74,13 +84,13 @@ const Jobs = () => {
       </div>
 
       {/* Filter Form */}
-      <div className="max-w-3xl mx-auto bg-[#2a2a2a] p-6 rounded-xl shadow-lg mb-12 mt-10">
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={(e) => e.preventDefault()}>
+      <div className="max-w-5xl mx-auto bg-[#2a2a2a] p-6 rounded-xl shadow-lg mb-12 mt-5 ">
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-4 " onSubmit={(e) => e.preventDefault()}>
           {/* Tech Stack */}
           <div>
             <label className="block mb-1 font-medium">Tech Stack</label>
             <select
-              className="w-full p-2 rounded bg-[#1f1f1f] text-white"
+              className="w-full p-2 rounded bg-[#1f1f1f] bg-white text-black"
               value={techStack}
               onChange={(e) => setTechStack(e.target.value)}
             >
@@ -95,8 +105,9 @@ const Jobs = () => {
               <input
                 type="text"
                 placeholder="Enter custom stack"
-                className="mt-2 w-full p-2 rounded bg-[#1f1f1f] text-white"
-                onChange={(e) => setTechStack(e.target.value)}
+                className="mt-2 w-full p-2 rounded bg-[#1f1f1f] bg-white text-black"
+                value={customTechStack}
+                onChange={(e) => setCustomTechStack(e.target.value)}
               />
             )}
           </div>
@@ -105,7 +116,7 @@ const Jobs = () => {
           <div>
             <label className="block mb-1 font-medium">Experience Level</label>
             <select
-              className="w-full p-2 rounded bg-[#1f1f1f] text-white"
+              className="w-full p-2 rounded bg-[#1f1f1f] bg-white text-black"
               value={level}
               onChange={(e) => setLevel(e.target.value)}
             >
@@ -120,7 +131,7 @@ const Jobs = () => {
           <div>
             <label className="block mb-1 font-medium">Location</label>
             <select
-              className="w-full p-2 rounded bg-[#1f1f1f] text-white"
+              className="w-full p-2 rounded bg-[#1f1f1f] bg-white text-black"
               value={selectedLocation}
               onChange={(e) => setSelectedLocation(e.target.value)}
             >
@@ -137,7 +148,7 @@ const Jobs = () => {
               <input
                 type="text"
                 placeholder="Enter custom location"
-                className="mt-2 w-full p-2 rounded bg-[#1f1f1f] text-white"
+                className="mt-2 w-full p-2 rounded bg-[#1f1f1f] bg-white text-black"
                 value={customLocation}
                 onChange={(e) => setCustomLocation(e.target.value)}
               />
@@ -152,7 +163,7 @@ const Jobs = () => {
             onClick={handleFindJobs}
             disabled={loading}
           >
-            {loading ? 'Finding Jobs for You...' : 'Find Jobs'}
+            {loading ? '⏳ Finding Jobs for You...' : 'Find Jobs'}
           </button>
           {error && <p className="text-red-400 mt-2">{error}</p>}
         </div>
@@ -167,7 +178,13 @@ const Jobs = () => {
 
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
         {!loading && jobs.length === 0 && (
-          <p className="text-center text-gray-400 col-span-full">No jobs found. Try a different filter.</p>
+          <p className="text-center text-gray-400 col-span-full">No jobs found. Try it now.</p>
+        )}
+
+        {loading && (
+          <div className="col-span-full text-center text-blue-400 text-lg animate-pulse">
+            ⏳ Fetching jobs, please wait...
+          </div>
         )}
 
         {jobs.map((job, index) => (
@@ -187,24 +204,23 @@ const Jobs = () => {
         ))}
       </div>
 
-      {/* Action Buttons Below Cards */}
+      {/* Action Buttons */}
       {jobs.length > 0 && (
-  <div className="flex flex-col md:flex-row justify-center items-center gap-6 ">
-    <button
-      className="bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-6 rounded-lg font-semibold shadow-md transition "
-      onClick={resetForm}
-    >
-      🔄 Explore Other Jobs
-    </button>
-    <button
-      className="bg-green-600 hover:bg-green-700 text-white py-2 px-6 rounded-lg font-semibold shadow-md transition"
-      onClick={() => navigate('/cover-letter')}
-    >
-      ✍️ Get Cover Letter
-    </button>
-  </div>
-)}
-
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+          <button
+            className="bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-6 rounded-lg font-semibold shadow-md transition mb-8"
+            onClick={resetForm}
+          >
+            🔄 Explore Other Jobs
+          </button>
+          <button
+            className="bg-green-600 hover:bg-green-700 text-white py-2 px-6 rounded-lg font-semibold shadow-md transition mb-8"
+            onClick={() => navigate('/coverLetter')}
+          >
+            ✍️ Get Cover Letter
+          </button>
+        </div>
+      )}
     </div>
   );
 };

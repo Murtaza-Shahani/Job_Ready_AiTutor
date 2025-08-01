@@ -1,37 +1,58 @@
 [
   {
-    "title": "Mid-Level Backend Engineer (Java)",
-    "company": "Emirates Group",
-    "location": "Dubai, UAE",
-    "description": "Develop and maintain Java-based backend systems for Emirates' loyalty program. Strong experience with Spring Boot required.",
-    "email": "recruitment@emirates.com"
+    "title": "Frontend Developer",
+    "company": "Systems Limited",
+    "location": "Lahore, Pakistan",
+    "description": "Develop and maintain user interfaces using React, ensuring responsiveness and cross-browser compatibility. Collaborate with backend developers on API integration.",
+    "email": "careers@systemsltd.com"
   },
   {
-    "title": "Backend Developer (Node.js)",
-    "company": "Careem",
-    "location": "Dubai, UAE",
-    "description": "Building scalable and reliable backend services for Careem's ride-hailing platform using Node.js and microservices architecture.",
-    "email": "careers@careem.com"
+    "title": "Mid-Level Frontend Engineer",
+    "company": "Arbisoft",
+    "location": "Lahore, Pakistan",
+    "description": "Build scalable web applications using modern JavaScript frameworks. Participate in code reviews and contribute to architectural decisions.",
+    "email": "jobs@arbisoft.com"
   },
   {
-    "title": "Mid Backend Engineer (Python/Django)",
-    "company": "Property Finder",
-    "location": "Dubai, UAE",
-    "description": "Develop and maintain backend APIs for Property Finder's real estate platform using Python and Django framework.",
-    "email": "hr@propertyfinder.ae"
+    "title": "React Developer",
+    "company": "NetSol Technologies",
+    "location": "Lahore, Pakistan",
+    "description": "Develop and implement UI components using React. Work with state management libraries like Redux or Context API.",
+    "email": "hr@netsoltech.com"
   },
   {
-    "title": "Backend Engineer - Golang",
-    "company": "Souqalmal.com",
-    "location": "Dubai, UAE",
-    "description": "Designing and implementing high-performance backend systems for Souqalmal's financial comparison platform using Golang.",
-    "email": "jobs@souqalmal.com"
+    "title": "Senior Frontend Developer",
+    "company": "Folio3",
+    "location": "Lahore, Pakistan",
+    "description": "Lead the development of frontend applications, mentor junior developers and ensure code quality and performance optimization.",
+    "email": "careers@folio3.com"
   },
   {
-    "title": "Mid-level .NET Developer",
-    "company": "Axiom Telecom",
-    "location": "Dubai, UAE",
-    "description": "Develop and maintain .NET applications for Axiom's telecommunications solutions. Experience with C# and ASP.NET MVC required.",
-    "email": "hr@axiomtelecom.com"
+    "title": "Frontend UI Developer",
+    "company": "Evamp & Saanga",
+    "location": "Lahore, Pakistan",
+    "description": "Design, develop and test UI features with HTML, CSS, JavaScript and relevant frameworks. Ensure UI/UX aligns with design specifications.",
+    "email": "hr@evampsaanga.com"
+  },
+  {
+    "title": "Frontend Engineer (Mid-Level)",
+    "company": "VentureDive",
+    "location": "Lahore, Pakistan",
+    "description": "Build robust and scalable web applications with React, Angular or Vue.js. Focus on performance and user experience optimization.",
+    "email": "careers@venturedive.com"
+  },
+  {
+    "title": "Frontend Developer",
+    "company": "Technify Solutions",
+    "location": "Lahore, Pakistan",
+    "description": "Developing interactive web applications with a focus on HTML, CSS, JavaScript, and modern frameworks. Working in an agile environment.",
+    "email": "careers@technify.pk"
+  },
+  {
+    "title": "Software Engineer - Frontend",
+    "company": "10Pearls",
+    "location": "Lahore, Pakistan",
+    "description": "Develop and maintain high-quality frontend solutions using modern technologies such as React, Angular, or Vue.js. Participate in code reviews.",
+    "email": "talent@10pearls.com"
   }
 ]
