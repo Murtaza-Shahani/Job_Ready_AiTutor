@@ -1,132 +1,132 @@
 [
   {
-    "question": "What is React primarily used for?",
+    "question": "What is Node.js?",
     "options": [
-      "Building server-side applications",
-      "Creating user interfaces",
-      "Managing databases",
-      "Developing mobile apps"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "What is JSX?",
-    "options": [
+      "A JavaScript runtime environment",
       "A JavaScript library",
-      "A syntax extension to JavaScript",
-      "A database query language",
-      "A type of CSS"
+      "A JavaScript framework",
+      "A JavaScript preprocessor"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "Which language is primarily used in Node.js?",
+    "options": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "C++"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is npm?",
+    "options": [
+      "Node Package Manager",
+      "Node Project Manager",
+      "Node Process Manager",
+      "New Program Module"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "Which command is used to install a package using npm?",
+    "options": [
+      "npm add",
+      "npm install",
+      "npm get",
+      "npm require"
     ],
     "answerIndex": 1
   },
   {
-    "question": "Which of the following is NOT a valid React component?",
+    "question": "What does the 'require' function do in Node.js?",
     "options": [
-      "Class component",
-      "Functional component",
-      "HTML component",
-      "Arrow function component"
+      "Includes a module",
+      "Defines a variable",
+      "Executes a function",
+      "Prints to the console"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "Which of the following is a built-in module in Node.js?",
+    "options": [
+      "React",
+      "Express",
+      "http",
+      "Angular"
     ],
     "answerIndex": 2
   },
   {
-    "question": "What is the purpose of 'props' in React?",
+    "question": "What is the purpose of the 'package.json' file?",
     "options": [
-      "To define the component's internal state",
-      "To pass data from a parent component to a child component",
-      "To handle user events",
-      "To style the component"
+      "Stores project dependencies and metadata",
+      "Defines the server routing",
+      "Contains the main JavaScript code",
+      "Specifies the CSS styles"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "How do you start a Node.js application?",
+    "options": [
+      "node start",
+      "node run",
+      "node app.js",
+      "start node"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "Which of the following is NOT a global object in Node.js?",
+    "options": [
+      "console",
+      "window",
+      "process",
+      "module"
     ],
     "answerIndex": 1
   },
   {
-    "question": "What is a 'state' in React?",
+    "question": "What is the purpose of the 'module.exports' object?",
     "options": [
-      "A way to style components",
-      "A built-in function for handling events",
-      "An object that holds data that can change over time",
-      "A way to define the component's structure"
+      "To define global variables",
+      "To export functions or objects from a module",
+      "To import modules",
+      "To define routes"
     ],
-    "answerIndex": 2
+    "answerIndex": 1
   },
   {
-    "question": "Which method is used to update the state of a component?",
+    "question": "What is an event loop in Node.js?",
     "options": [
-      "updateState()",
-      "changeState()",
-      "setState()",
-      "modifyState()"
+      "A loop that runs JavaScript code",
+      "A loop that handles asynchronous operations",
+      "A loop that defines variables",
+      "A loop that manages dependencies"
     ],
-    "answerIndex": 2
+    "answerIndex": 1
   },
   {
-    "question": "What is the purpose of the 'render()' method in a React component?",
+    "question": "Which HTTP method is typically used to retrieve data?",
     "options": [
-      "To initialize the component's state",
-      "To update the component's props",
-      "To define the component's styling",
-      "To describe what the UI should look like"
+      "POST",
+      "PUT",
+      "DELETE",
+      "GET"
     ],
     "answerIndex": 3
   },
   {
-    "question": "Which of the following is the correct way to render a variable 'name' in JSX?",
+    "question": "Which of the following is a popular Node.js web framework?",
     "options": [
-      "{name}",
-      "{{name}}",
-      "<name>",
-      "${name}"
-    ],
-    "answerIndex": 0
-  },
-  {
-    "question": "What is the virtual DOM in React?",
-    "options": [
-      "A real DOM implementation",
-      "A lightweight in-memory representation of the DOM",
-      "A database for storing component data",
-      "A server-side rendering technique"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "Which tool is commonly used for building React applications?",
-    "options": [
-      "Webpack",
-      "Angular CLI",
-      "Vue CLI",
-      "JQuery"
-    ],
-    "answerIndex": 0
-  },
-  {
-    "question": "What is the purpose of 'key' prop when rendering a list of elements in React?",
-    "options": [
-      "To style the elements",
-      "To uniquely identify each element in the list",
-      "To define the order of the elements",
-      "To add a tooltip to the elements"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "What does 'useState' hook return?",
-    "options": [
-      "Only the state variable",
-      "Only the function to update the state",
-      "A pair containing the state variable and a function to update it",
-      "Nothing"
+      "Django",
+      "Ruby on Rails",
+      "Express.js",
+      "Spring"
     ],
     "answerIndex": 2
-  },
-  {
-    "question": "What is the correct way to import React in a JavaScript file?",
-    "options": [
-      "import React from 'react';",
-      "require('react')",
-      "const React = require('react')",
-      "include('react')"
-    ],
-    "answerIndex": 0
   }
 ]

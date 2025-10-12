@@ -1,58 +1,58 @@
 [
   {
-    "title": "Frontend Developer",
+    "title": "Junior Backend Engineer (Node.js)",
+    "company": "Confiz",
+    "location": "Karachi",
+    "description": "Develop and maintain backend systems using Node.js, Express.js and MongoDB. Contribute to API design and implementation.",
+    "email": "careers@confiz.com"
+  },
+  {
+    "title": "Associate Software Engineer (Python)",
     "company": "Systems Limited",
-    "location": "Lahore, Pakistan",
-    "description": "Develop and maintain user interfaces using React, ensuring responsiveness and cross-browser compatibility. Collaborate with backend developers on API integration.",
-    "email": "careers@systemsltd.com"
+    "location": "Karachi",
+    "description": "Develop backend applications with Python, Django/Flask. Write unit tests and integrate with databases. Collaborate with frontend team.",
+    "email": "recruitment@systemsltd.com"
   },
   {
-    "title": "Mid-Level Frontend Engineer",
-    "company": "Arbisoft",
-    "location": "Lahore, Pakistan",
-    "description": "Build scalable web applications using modern JavaScript frameworks. Participate in code reviews and contribute to architectural decisions.",
-    "email": "jobs@arbisoft.com"
-  },
-  {
-    "title": "React Developer",
-    "company": "NetSol Technologies",
-    "location": "Lahore, Pakistan",
-    "description": "Develop and implement UI components using React. Work with state management libraries like Redux or Context API.",
-    "email": "hr@netsoltech.com"
-  },
-  {
-    "title": "Senior Frontend Developer",
-    "company": "Folio3",
-    "location": "Lahore, Pakistan",
-    "description": "Lead the development of frontend applications, mentor junior developers and ensure code quality and performance optimization.",
-    "email": "careers@folio3.com"
-  },
-  {
-    "title": "Frontend UI Developer",
-    "company": "Evamp & Saanga",
-    "location": "Lahore, Pakistan",
-    "description": "Design, develop and test UI features with HTML, CSS, JavaScript and relevant frameworks. Ensure UI/UX aligns with design specifications.",
-    "email": "hr@evampsaanga.com"
-  },
-  {
-    "title": "Frontend Engineer (Mid-Level)",
-    "company": "VentureDive",
-    "location": "Lahore, Pakistan",
-    "description": "Build robust and scalable web applications with React, Angular or Vue.js. Focus on performance and user experience optimization.",
-    "email": "careers@venturedive.com"
-  },
-  {
-    "title": "Frontend Developer",
-    "company": "Technify Solutions",
-    "location": "Lahore, Pakistan",
-    "description": "Developing interactive web applications with a focus on HTML, CSS, JavaScript, and modern frameworks. Working in an agile environment.",
-    "email": "careers@technify.pk"
-  },
-  {
-    "title": "Software Engineer - Frontend",
+    "title": "Backend Developer - Entry Level",
     "company": "10Pearls",
-    "location": "Lahore, Pakistan",
-    "description": "Develop and maintain high-quality frontend solutions using modern technologies such as React, Angular, or Vue.js. Participate in code reviews.",
-    "email": "talent@10pearls.com"
+    "location": "Karachi",
+    "description": "Build scalable backend solutions with Java. Work on RESTful APIs and microservices architecture. Participate in code reviews.",
+    "email": "careers@10pearls.com"
+  },
+  {
+    "title": "Junior Backend Engineer (PHP/Laravel)",
+    "company": "Devsinc",
+    "location": "Karachi",
+    "description": "Design, develop and maintain web applications using PHP and Laravel framework. Implement database schemas and optimize queries.",
+    "email": "jobs@devsinc.com"
+  },
+  {
+    "title": "Software Engineer Intern (Backend)",
+    "company": "Arbisoft",
+    "location": "Karachi",
+    "description": "Assist in building backend systems using various technologies. Learn best practices in software development. Contribute to projects.",
+    "email": "hr@arbisoft.com"
+  },
+  {
+    "title": "Trainee Software Engineer (Backend)",
+    "company": "NetSol Technologies",
+    "location": "Karachi",
+    "description": "Learn and implement backend solutions. Work on various projects, gaining experience in databases and API development.",
+    "email": "careers@netsoltech.com"
+  },
+  {
+    "title": "Junior Java Developer",
+    "company": "Nextbridge",
+    "location": "Karachi",
+    "description": "Design and develop backend systems utilizing Java frameworks. Focus on scalability and performance of the codebase.",
+    "email": "jobs@nextbridge.pk"
+  },
+  {
+    "title": "Graduate Software Engineer - Backend",
+    "company": "TRG Tech",
+    "location": "Karachi",
+    "description": "Design, develop, test and deploy backend systems focusing on Node.js/Python. Follow agile methodologies and collaborate with teams.",
+    "email": "careers@trgtech.com"
   }
 ]
