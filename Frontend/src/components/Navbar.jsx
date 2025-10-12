@@ -23,6 +23,7 @@ const Navbar = () => {
           <Link to="/learn" className="hover:text-[#38bdf8] transition">Learn</Link>
           <Link to="/quiz" className="hover:text-[#38bdf8] transition">Quiz</Link>
           <Link to="/jobs" className="hover:text-[#38bdf8] transition">Jobs</Link>
+          <Link to="/coverLetter" className="hover:text-[#38bdf8] transition">Cover-letter</Link>
         </div>
 
         {/* Right: Buttons + Profile */}
@@ -59,6 +60,7 @@ const Navbar = () => {
           <Link to="/learn" className="hover:text-[#38bdf8] transition" onClick={toggleMenu}>Learn</Link>
           <Link to="/quiz" className="hover:text-[#38bdf8] transition" onClick={toggleMenu}>Quiz</Link>
           <Link to="/jobs" className="hover:text-[#38bdf8] transition" onClick={toggleMenu}>Jobs</Link>
+          <Link to="/coverLetter" className="hover:text-[#38bdf8] transition" onClick={toggleMenu}>Cover-letter</Link>
 
           {/* Auth Buttons - Separated */}
           <Link
