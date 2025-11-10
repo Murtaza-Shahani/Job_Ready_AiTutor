@@ -40,7 +40,7 @@ const AuthForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    const API = import.meta.env.VITE_API_URL;
+    const API = import.meta.env.VITE_API_BASE_URL;
     e.preventDefault();
     if (!validate()) return;
 
