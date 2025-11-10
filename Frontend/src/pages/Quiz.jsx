@@ -120,7 +120,7 @@ const Quiz = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center text-xl">
+      <div className="min-h-screen bg-[#0f172a] text-white flex items-center justify-center text-xl">
         ⏳ Generating quiz{subject && <> for <span className="text-sky-400 mx-1">{subject}</span></>}...
       </div>
     );
@@ -128,8 +128,8 @@ const Quiz = () => {
 
   if (!hasStarted && !isAutoStart) {
     return (
-      <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center space-y-6">
-        <h1 className="text-3xl font-bold text-purple-400">🧪 Start a New Quiz</h1>
+      <div className="min-h-screen bg-[#0f172a] text-white flex flex-col items-center justify-center space-y-6 ">
+        <h1 className="text-3xl font-bold text-purple-400"> Start a New Quiz</h1>
 
         {error && <div className="text-red-400">{error}</div>}
 
@@ -156,7 +156,7 @@ const Quiz = () => {
             className="w-full py-2 bg-purple-600 rounded-md hover:bg-purple-700 transition"
             onClick={() => handleStart(subject, level)}
           >
-            🚀 Start Quiz
+             Start Quiz
           </button>
         </div>
       </div>
@@ -165,17 +165,17 @@ const Quiz = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-black text-red-400 flex items-center justify-center text-xl">
+      <div className="min-h-screen bg-[#0f172a] text-red-400 flex items-center justify-center text-xl pt-8">
         ❌ {error}
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] text-white py-10 px-4 md:px-16">
+    <div className="min-h-screen bg-[#0f172a] text-white py-10 px-4 md:px-16 pt-20">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl md:text-4xl font-bold text-purple-400 animate-pulse">
-          � Quiz Time
+           Quiz Time
         </h1>
         {!submitted && (
           <div className="text-lg font-semibold text-yellow-400">
@@ -186,7 +186,7 @@ const Quiz = () => {
 
       <div className="space-y-10">
         {quizData.map((q, i) => (
-          <div key={i} className="bg-[#2c2c2c] p-6 rounded-xl shadow-lg">
+          <div key={i} className="bg-[#1e293b] p-6 rounded-xl shadow-lg">
             <h2 className="text-lg md:text-xl font-semibold mb-4">
               {i + 1}. {q.question}
             </h2>
@@ -198,7 +198,7 @@ const Quiz = () => {
                     ${
                       selectedOptions[i] === j
                         ? "bg-purple-600 border-purple-400"
-                        : "bg-[#3a3a3a] border-[#555]"
+                        : "bg-[#334155] border-[#475569]"
                     }
                   `}
                 >
@@ -230,7 +230,7 @@ const Quiz = () => {
       ) : (
         <div className="text-center mt-10 space-y-6">
           <div className="text-2xl font-bold text-green-400">
-            🎉 Your Score: {getScore()} / {quizData.length}
+             Your Score: {getScore()} / {quizData.length}
           </div>
           <div className="flex justify-center gap-4">
             <button
@@ -243,7 +243,7 @@ const Quiz = () => {
               onClick={() => navigate("/jobs")}
               className="px-6 py-2 text-white bg-emerald-600 hover:bg-emerald-700 transition rounded-lg shadow-md"
             >
-              💼 Explore Jobs
+               Explore Jobs
             </button>
           </div>
         </div>
