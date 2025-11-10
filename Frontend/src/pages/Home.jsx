@@ -21,9 +21,15 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
 const navigate = useNavigate(); 
-  const handleClick = () => {
-    navigate("/login"); // Navigate to the login page when the button is clicked
-  };
+const handleClick = () => {
+  const isLoggedIn = !!localStorage.getItem("token");
+  
+  if (isLoggedIn) {
+    navigate("/learn");
+  } else {
+    navigate("/login");
+  }
+};
   
   const images = ["/image1.jpg", "/image2.jpg", "/image3.png", "/image4.jpg"];
   const settings = {
