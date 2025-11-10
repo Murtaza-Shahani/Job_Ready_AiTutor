@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
 const AuthForm = () => {
   const [isSignup, setIsSignup] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -56,7 +56,8 @@ const AuthForm = () => {
       });
 
       if (isSignup) {
-        alert(response.data.message || "Signup successful! Please login.");
+        toast.success(" Signup successful! Please login.");
+        
         setFormData({ name: "", email: "", password: "" });
         setIsSignup(false); // Navigate to login form
       } else {
@@ -66,7 +67,7 @@ const AuthForm = () => {
       }
     } catch (error) {
       console.error(error.response?.data || error.message);
-      alert(error.response?.data?.message || "Something went wrong!");
+      toast.error(err.response?.data?.error || "Login failed. Please try again.");
     } finally {
       setLoading(false);
     }

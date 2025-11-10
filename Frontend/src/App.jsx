@@ -1,5 +1,7 @@
 import React from "react";
 import "./index.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
@@ -26,6 +28,16 @@ function App() {
           <Route path="/coverLetter" element = {<CoverLetter/>}/>
         </Routes>
       </BrowserRouter>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="dark"
+      />
       </div>
     </>
   );
