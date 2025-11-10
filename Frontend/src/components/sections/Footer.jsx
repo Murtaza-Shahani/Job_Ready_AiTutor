@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -11,20 +11,35 @@ const Footer = () => {
         {/* Links */}
         <div className="flex gap-6 text-gray-300">
           <a href="/">Home</a>
-          <a href="/listings">Explore Jobs</a>
+          <a href="/learn">Learn</a>
+          <a href="/jobs">Explore Jobs</a>
           <a href="/quiz">Quiz</a>
-          <a href="/cover-letter">Cover Letter</a>
+          <a href="/coverLetter">Cover Letter</a>
         </div>
 
         {/* Social Icons */}
         <div className="flex gap-4 text-gray-300 text-xl">
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-          <a href="https://github.com" target="_blank" rel="noreferrer"><FaGithub /></a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer"><FaTwitter /></a>
+          <a href="https://www.linkedin.com/in/ghulam-murtaza-shahani/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+          <a href="https://github.com/Murtaza-Shahani" target="_blank" rel="noreferrer"><FaGithub /></a>
+          <a href="https://www.instagram.com/murtaza_shahani1/" target="_blank" rel="noreferrer"><FaInstagram /></a>
         </div>
       </div>
 
-      <div className="text-center text-gray-500 mt-6 text-sm">
+      {/* Credit Line */}
+      <div className="text-center text-gray-400 mt-6 text-sm">
+        Design and Develop with ❤️ and passion by{" "}
+        <a 
+          href="https://www.linkedin.com/in/ghulam-murtaza-shahani/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
+        >
+          Ghulam Murtaza
+        </a>
+        , A Full Stack Developer
+      </div>
+
+      <div className="text-center text-gray-500 mt-4 text-sm">
         &copy; {new Date().getFullYear()} JobReadyTutor. All rights reserved.
       </div>
     </footer>
