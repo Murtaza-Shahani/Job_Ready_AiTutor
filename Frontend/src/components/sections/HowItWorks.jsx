@@ -1,23 +1,28 @@
 import React from "react";
-import { FaLightbulb, FaBriefcase, FaFileAlt } from "react-icons/fa";
+import { FaUserPlus, FaCompass, FaRocket } from "react-icons/fa";
 import { theme } from "../../theme";
 
 const steps = [
+  
   {
-    Icon: FaLightbulb,
-    title: "Learn & Practice",
-    description: "Take quizzes and learn skills to strengthen your job readiness.",
+    Icon: FaUserPlus,
+    title: "Register & Login",
+    description: "Create your account and log in to access all features and personalized recommendations.",
   },
   {
-    Icon: FaBriefcase,
-    title: "Explore Jobs",
-    description: "Find job listings that match your skills and experience.",
+    Icon: FaCompass,
+    title: "Explore & Select",
+    description: "Navigate to any section — Learn, Quiz, or Jobs — and choose what interests you most.",
   },
   {
-    Icon: FaFileAlt,
-    title: "Get Cover Letter",
-    description: "Generate a personalized, professional cover letter instantly.",
+    Icon: FaRocket,
+    title: "Grow Professionally",
+    description: "Get instant results, build your knowledge, and advance your career exponentially.",
   },
+
+
+  
+  
 ];
 
 const HowItWorks = () => {

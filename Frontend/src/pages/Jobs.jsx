@@ -38,7 +38,8 @@ const Jobs = () => {
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/jobs/generate', {
+      const API = import.meta.env.VITE_API_BASE_URL;
+      const response = await fetch(`${API}/api/jobs/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

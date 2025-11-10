@@ -24,7 +24,8 @@ const CoverLetter = () => {
     setGeneratedLetter('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/cover-letter/generate', {
+      const API = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${API}/api/cover-letter/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -54,7 +55,7 @@ const CoverLetter = () => {
       {/* Header */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-extrabold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
-          📝 AI Cover Letter Generator
+           AI Cover Letter Generator
         </h1>
         <p className="text-gray-400 max-w-2xl mx-auto text-lg">
           Fill in your details and get a personalized, professional cover letter tailored for your dream job.

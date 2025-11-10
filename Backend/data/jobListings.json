@@ -1,58 +1,58 @@
 [
   {
-    "title": "Junior Backend Engineer (Node.js)",
+    "title": "Junior MERN Stack Developer",
     "company": "Confiz",
     "location": "Karachi",
-    "description": "Develop and maintain backend systems using Node.js, Express.js and MongoDB. Contribute to API design and implementation.",
+    "description": "We are looking for a Junior MERN Stack Developer to join our dynamic team in Karachi. Apply now!",
     "email": "careers@confiz.com"
   },
   {
-    "title": "Associate Software Engineer (Python)",
+    "title": "MERN Stack Engineer (Entry Level)",
     "company": "Systems Limited",
     "location": "Karachi",
-    "description": "Develop backend applications with Python, Django/Flask. Write unit tests and integrate with databases. Collaborate with frontend team.",
+    "description": "Join Systems Limited as an Entry Level MERN Stack Engineer. Gain valuable experience in a fast-paced environment.",
     "email": "recruitment@systemsltd.com"
   },
   {
-    "title": "Backend Developer - Entry Level",
-    "company": "10Pearls",
-    "location": "Karachi",
-    "description": "Build scalable backend solutions with Java. Work on RESTful APIs and microservices architecture. Participate in code reviews.",
-    "email": "careers@10pearls.com"
-  },
-  {
-    "title": "Junior Backend Engineer (PHP/Laravel)",
-    "company": "Devsinc",
-    "location": "Karachi",
-    "description": "Design, develop and maintain web applications using PHP and Laravel framework. Implement database schemas and optimize queries.",
-    "email": "jobs@devsinc.com"
-  },
-  {
-    "title": "Software Engineer Intern (Backend)",
+    "title": "Trainee Software Engineer - MERN",
     "company": "Arbisoft",
     "location": "Karachi",
-    "description": "Assist in building backend systems using various technologies. Learn best practices in software development. Contribute to projects.",
+    "description": "Arbisoft is hiring Trainee Software Engineers with MERN stack skills. Kickstart your career with us!",
     "email": "hr@arbisoft.com"
   },
   {
-    "title": "Trainee Software Engineer (Backend)",
+    "title": "Associate Software Engineer - MERN Stack",
+    "company": "10Pearls",
+    "location": "Karachi",
+    "description": "10Pearls is seeking an Associate Software Engineer proficient in MERN stack technologies. Apply today!",
+    "email": "careers@10pearls.com"
+  },
+  {
+    "title": "Junior Web Developer (MERN)",
+    "company": "Ovex Technologies",
+    "location": "Karachi",
+    "description": "Ovex Technologies is looking for a Junior Web Developer with expertise in MERN stack. Join our team!",
+    "email": "jobs@ovextech.com"
+  },
+  {
+    "title": "MERN Stack Developer (Junior)",
+    "company": "Devsinc",
+    "location": "Karachi",
+    "description": "Devsinc is hiring a Junior MERN Stack Developer. Contribute to exciting projects and grow your skills.",
+    "email": "hr@devsinc.com"
+  },
+  {
+    "title": "Software Engineer - MERN (Fresher)",
+    "company": "SadaPay",
+    "location": "Karachi",
+    "description": "SadaPay is seeking fresh graduates for Software Engineer roles with MERN stack experience. Apply now!",
+    "email": "careers@sadapay.pk"
+  },
+  {
+    "title": "Junior MERN Developer",
     "company": "NetSol Technologies",
     "location": "Karachi",
-    "description": "Learn and implement backend solutions. Work on various projects, gaining experience in databases and API development.",
-    "email": "careers@netsoltech.com"
-  },
-  {
-    "title": "Junior Java Developer",
-    "company": "Nextbridge",
-    "location": "Karachi",
-    "description": "Design and develop backend systems utilizing Java frameworks. Focus on scalability and performance of the codebase.",
-    "email": "jobs@nextbridge.pk"
-  },
-  {
-    "title": "Graduate Software Engineer - Backend",
-    "company": "TRG Tech",
-    "location": "Karachi",
-    "description": "Design, develop, test and deploy backend systems focusing on Node.js/Python. Follow agile methodologies and collaborate with teams.",
-    "email": "careers@trgtech.com"
+    "description": "NetSol Technologies is looking for Junior MERN Developers to join their growing team. Great opportunity for growth.",
+    "email": "hr.pakistan@netsoltech.com"
   }
 ]

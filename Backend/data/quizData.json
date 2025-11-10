@@ -25,9 +25,89 @@
       "Node Package Manager",
       "Node Project Manager",
       "Node Process Manager",
-      "New Program Module"
+      "New Project Module"
     ],
     "answerIndex": 0
+  },
+  {
+    "question": "Which command is used to initialize a new Node.js project?",
+    "options": [
+      "node init",
+      "npm start",
+      "npm init",
+      "node start"
+    ],
+    "answerIndex": 2
+  },
+  {
+    "question": "What is the purpose of the 'require' function in Node.js?",
+    "options": [
+      "To define a variable",
+      "To import modules",
+      "To export modules",
+      "To print to the console"
+    ],
+    "answerIndex": 1
+  },
+  {
+    "question": "What is the global object in Node.js similar to in browsers?",
+    "options": [
+      "document",
+      "window",
+      "this",
+      "globalThis"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "question": "Which of the following is NOT a built-in module in Node.js?",
+    "options": [
+      "http",
+      "fs",
+      "path",
+      "react"
+    ],
+    "answerIndex": 3
+  },
+  {
+    "question": "How do you typically start a Node.js application?",
+    "options": [
+      "node app.js",
+      "npm run start",
+      "run app.js",
+      "start app.js"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "What does the 'fs' module in Node.js provide?",
+    "options": [
+      "File system related functions",
+      "HTTP server functionalities",
+      "Path manipulation utilities",
+      "Database connection management"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "What is the purpose of package.json file?",
+    "options": [
+      "To store project dependencies and metadata",
+      "To define the project's HTML structure",
+      "To configure the Node.js runtime environment",
+      "To manage user authentication"
+    ],
+    "answerIndex": 0
+  },
+  {
+    "question": "What is an event loop in Node.js?",
+    "options": [
+      "A loop that iterates through the code",
+      "A mechanism to handle asynchronous operations",
+      "A loop that prevents the server from crashing",
+      "A tool for debugging code"
+    ],
+    "answerIndex": 1
   },
   {
     "question": "Which command is used to install a package using npm?",
@@ -35,98 +115,18 @@
       "npm add",
       "npm install",
       "npm get",
-      "npm require"
+      "npm download"
     ],
     "answerIndex": 1
   },
   {
-    "question": "What does the 'require' function do in Node.js?",
+    "question": "What is the purpose of streams in Node.js?",
     "options": [
-      "Includes a module",
-      "Defines a variable",
-      "Executes a function",
-      "Prints to the console"
+      "To handle large amounts of data efficiently",
+      "To manage database connections",
+      "To create graphical user interfaces",
+      "To control the flow of code execution"
     ],
     "answerIndex": 0
-  },
-  {
-    "question": "Which of the following is a built-in module in Node.js?",
-    "options": [
-      "React",
-      "Express",
-      "http",
-      "Angular"
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "What is the purpose of the 'package.json' file?",
-    "options": [
-      "Stores project dependencies and metadata",
-      "Defines the server routing",
-      "Contains the main JavaScript code",
-      "Specifies the CSS styles"
-    ],
-    "answerIndex": 0
-  },
-  {
-    "question": "How do you start a Node.js application?",
-    "options": [
-      "node start",
-      "node run",
-      "node app.js",
-      "start node"
-    ],
-    "answerIndex": 2
-  },
-  {
-    "question": "Which of the following is NOT a global object in Node.js?",
-    "options": [
-      "console",
-      "window",
-      "process",
-      "module"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "What is the purpose of the 'module.exports' object?",
-    "options": [
-      "To define global variables",
-      "To export functions or objects from a module",
-      "To import modules",
-      "To define routes"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "What is an event loop in Node.js?",
-    "options": [
-      "A loop that runs JavaScript code",
-      "A loop that handles asynchronous operations",
-      "A loop that defines variables",
-      "A loop that manages dependencies"
-    ],
-    "answerIndex": 1
-  },
-  {
-    "question": "Which HTTP method is typically used to retrieve data?",
-    "options": [
-      "POST",
-      "PUT",
-      "DELETE",
-      "GET"
-    ],
-    "answerIndex": 3
-  },
-  {
-    "question": "Which of the following is a popular Node.js web framework?",
-    "options": [
-      "Django",
-      "Ruby on Rails",
-      "Express.js",
-      "Spring"
-    ],
-    "answerIndex": 2
   }
 ]

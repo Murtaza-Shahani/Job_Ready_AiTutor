@@ -7,6 +7,7 @@ import Learn from "./pages/Learn";
 import Quiz from "./pages/Quiz";
 import Jobs from "./pages/Jobs";
 import CoverLetter from "./pages/CoverLetter";
+import AuthForm from "./components/sections/AuthForm";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path= "/login" element= {<AuthForm/>}/>
           <Route path="/learn" element = {<Learn/>}/>
           
           <Route path="/quiz" element = {<Quiz/>}/>
