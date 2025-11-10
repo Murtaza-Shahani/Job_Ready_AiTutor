@@ -24,7 +24,7 @@ const CoverLetter = () => {
     setGeneratedLetter('');
 
     try {
-      const API = import.meta.env.VITE_API_URL;
+      const API = import.meta.env.VITE_API_BASE_URL;
       const response = await fetch(`${API}/api/cover-letter/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
