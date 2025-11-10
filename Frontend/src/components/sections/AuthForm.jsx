@@ -40,14 +40,15 @@ const AuthForm = () => {
   };
 
   const handleSubmit = async (e) => {
+    const API = import.meta.env.VITE_API_URL;
     e.preventDefault();
     if (!validate()) return;
 
     setLoading(true);
 
     const endpoint = isSignup
-      ? "http://localhost:5000/api/auth/signup"
-      : "http://localhost:5000/api/auth/login";
+      ? `${API}/api/auth/signup`
+      : `${API}/api/auth/login`;
 
     try {
       const response = await axios.post(endpoint, formData, {
