@@ -22,13 +22,8 @@ app.use(cors({
     if (!origin) return callback(null, true);
 
     const allowedOrigins = [
-      'http://localhost:3000',
-      'http://localhost:5173',
-      'http://localhost:5174',
-      'http://cssawwwards.com',
-      'https://cssawwwards.com',
-      'http://www.cssawwwards.com',
-      'https://www.cssawwwards.com'
+      'https://job-ready-ai-tutor.vercel.app',
+      
     ];
 
     // Check for subdomain patterns
